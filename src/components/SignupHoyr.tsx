@@ -1,15 +1,14 @@
 "use client";
 import { Input } from "./ui/input";
-import { Button } from "./ui/button";
 import { useState } from "react";
 import { ChevronLeft } from "lucide-react";
 import { Checkbox } from "./ui/checkbox";
 
-const SecondStep = (props) => {
-  const [password, setPassword] = useState();
+const SecondStep = (props: any) => {
+  const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState();
   const [error,setError]=useState({});
-  const passwordPattern=/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/
+  const passwordPattern=/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
   const { setStep } = props;
   const passwordChanged = (e) => {
     setPassword(e.target.value);
@@ -67,9 +66,7 @@ const SecondStep = (props) => {
       <Checkbox/>
      <p>Show password</p>
       </div>
-      <Button className="bg-gray-400" onClick={onClick}>
-        Let's go
-      </Button>
+      <button className="bg-gray-400" onClick={onClick} > Let's go</button>
       <p className="text-center mt-2">
         Already have an account? <a href="#">Log in</a>
       </p>

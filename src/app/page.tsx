@@ -1,11 +1,10 @@
-import { SignupPage } from "@/components/signup.page";
-
+"use client";
+import CreateAccount from "@/components/SignUp";
 
 export default function Home() {
   return (
-    <div className="bg-white w-full h-screen">
-      <SignupPage/>
-     
-    </div>
+    <>
+      <CreateAccount />
+    </>
   );
 }

@@ -1,10 +1,9 @@
 "use client";
 import { Input } from "./ui/input";
-import { Button } from "./ui/button";
 import { useState } from "react";
 
-const FirstStep = (props) => {
-  const [email, setEmail] = useState();
+const FirstStep = (props: any) => {
+  const [email, setEmail] = useState("");
   const [error,setError]=useState({});
   const {setStep}=props;
   setStep(1);
@@ -33,12 +32,12 @@ const FirstStep = (props) => {
               placeholder="Enter your email address"
               onChange={emailChanged}
               />
-              {error.email ? (
+              {/* {error.email ? (
                   <div className="text-red-500">{error.email}</div>
                 ) : (
-                    <></>)}
+                    <></>)} */}
                     </div>
-            <Button className="bg-gray-400" onClick={onClick}>Let's go</Button>
+            <button className="bg-gray-400" onClick={onClick}>Let's go</button>
             <p className="text-center mt-2">
               Already have an account? <a href="#">Log in</a>
             </p>

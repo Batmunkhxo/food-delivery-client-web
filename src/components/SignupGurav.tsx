@@ -1,10 +1,9 @@
 "use client";
 import { Input } from "./ui/input";
-import { Button } from "./ui/button";
 import { useState } from "react";
 import { ChevronLeft } from "lucide-react";
 
-const ThirdStep = (props) => {
+const ThirdStep = (props: any) => {
   const { setStep } = props;
   const [email, setEmail] = useState();
   const [password, setPassword]=useState();
@@ -34,7 +33,8 @@ setPassword(e.target.value)
       <div>
         <Input placeholder="Password" onChange={passwordChanged}/>
       </div>
-      <Button className="bg-gray-400" onClick={onClick}>Let's go</Button>
+      {/* <Button className="bg-gray-400" onClick={onClick}>Let's go</Button> */}
+      <button className="bg-gray-400" onClick={onClick} > Let's go</button>
       <p className="text-center mt-2">
         Already have an account? <a href="#">Log in</a>
       </p>
